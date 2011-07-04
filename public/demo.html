@@ -11,54 +11,27 @@
 
         <script>
 
-              function getDocHeight(){
-                return Math.max(
-                  Math.max(document.body.scrollHeight, document.documentElement.scrollHeight),
-                  Math.max(document.body.offsetHeight, document.documentElement.offsetHeight),
-                  Math.max(document.body.clientHeight, document.documentElement.clientHeight)
-                );
-              }
-
-
-              function getScrollOffsets(){
-                return {
-                  left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
-                  top:  window.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
-                };
-              }
-
-
-                var tab = document.createElement('div');
-                tab.setAttribute('id', 'zenbox_tab');
-                tab.setAttribute('href', '#');
-                tab.style.display = 'none';
-                document.body.appendChild(tab);
-
                 var overlay = document.createElement('div');
-                overlay.setAttribute('id', 'zenbox_overlay');
+                overlay.setAttribute('id', 'beesbox_overlay');
                 overlay.style.display = 'none';
-                overlay.innerHTML = '<div id="zenbox_container">' +
-                        '  <div class="header"><img id="zenbox_close" /></div>' +
-                        '  <iframe id="zenbox_body" frameborder="0" scrolling="auto" allowTransparency="true"></iframe>' +
+                overlay.innerHTML = '<div id="beesbox_container">' +
+                        '  <div class="header"><img id="beesbox_close" /></div>' +
+                        '  <iframe id="beesbox_body" frameborder="0" scrolling="auto" allowTransparency="true"></iframe>' +
                         '</div>' +
-                        '<div id="zenbox_scrim">&nbsp;</div>';
+                        '<div id="beesbox_scrim">&nbsp;</div>';
                     document.body.appendChild(overlay);
 
-                var container   = document.getElementById('zenbox_container');
-                var closeButton = document.getElementById('zenbox_close');
-                var iframe      = document.getElementById('zenbox_body');                
-                var scrim       = document.getElementById('zenbox_scrim');
+                var container   = document.getElementById('beesbox_container');
+                var closeButton = document.getElementById('beesbox_close');
+                var iframe      = document.getElementById('beesbox_body');                
+                var scrim       = document.getElementById('beesbox_scrim');
 
-
-                iframe.src = "http://www.smh.com.au"
-
-
-                overlay.style.height = '1000px';
-                container.style.top = getScrollOffsets().top + 50 + 'px';
+                iframe.src = "http://www.smh.com.au";
+                iframe.style.height = '400px';
+                iframe.style.width = '700px';
+                iframe.addEventListener('click', function() { alert(42);}, false)
+                
                 overlay.style.display = "block";
-
-                
-                
                 
         </script>
     </body>
