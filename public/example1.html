@@ -1,4 +1,16 @@
- var BeesBox = function(url) {
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>What do to next</title>
+        <meta charset="utf-8">        
+    </head>
+    <body>
+
+        Some content...
+
+        <script>
+
                 var overlay = document.createElement('div');
                 overlay.setAttribute('id', 'beesbox_overlay');
                 overlay.style.display = 'none';
@@ -17,11 +29,12 @@
                 iframe.src = "mob.html";
                 iframe.style.height = '400px';
                 iframe.style.width = '700px';
-                iframe.style.position = 'fixed';
-                iframe.style.top = '30px';
-                iframe.style.left = '30px';
-                iframe.style.border = '2px solid';  
-
+                iframe.addEventListener('click', function() { alert(42);}, false)
                 
-                overlay.style.display = "block"; 	
- } 
+                overlay.style.display = "block";
+                
+        </script>
+    </body>
+
+
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0071)https://grandcentral.cloudbees.com/?josso_assertion_id=61E531BFA3F47156 -->
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+CloudBees - Grand Central
+</title>
+<meta charset="utf-8">
+<link href="https://di388e0fcqllf.cloudfront.net/images/favicon.png" rel="Shortcut Icon" type="image/ico">
+<!-- = stylesheet_link_tag ['cb_style'], :cache => 'cb_style_cache.css' -->
+<!-- = stylesheet_link_tag ['cb'], :cache => 'cb_cache.css' -->
+<link href="./CB_GC_files/juc.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./CB_GC_files/eco.css" media="screen" rel="stylesheet" type="text/css">
+
+<script src="./CB_GC_files/default.js" type="text/javascript"></script><style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],embed[allowscriptaccess],embed[flashvars],embed[wmode],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[classid$="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}</style>
+
+
+<script type="text/javascript">
+  //<![CDATA[
+    jQuery(document).ready(function($) {
+        $("ul.sf-menu").supersubs({
+            minWidth:    12, // em units
+            maxWidth:    27,
+            extraWidth:  1
+        }).superfish({
+            hoverClass:  'open',
+            delay:       '501',
+            speed:       'fast'
+        });
+    });
+    $(function() {
+    
+      var emailRegexp = new RegExp("^[0-9a-zA-Z\.\+]+@[0-9a-zA-Z]+[\.]{1}[0-9a-zA-Z]+[\.]?[0-9a-zA-Z]+$");
+      function isValidEmail(email){
+        return emailRegexp.test(email);
+      }
+      $('#account_switcher').change(function() {
+       var account = $("#account").val();
+       $.post("/account/select_account",
+           {"account":$("#account_switcher").val()},
+           function(data, status, req){
+               if(data.errors != null){
+                  //TODO: display error message
+               }else{
+                  window.location=data.redirect;
+               }
+           }, "json");
+      });
+    
+      // Dialog
+      $('#close-dialog').dialog({
+        autoOpen: false,
+        modal: true,
+        width: 600,
+        buttons: {
+            "Close": function() {
+                $(this).dialog("close");
+            }
+        }
+      });
+    
+      $('#plan').dialog({
+        autoOpen: false,
+        modal: true,
+        width: 600,
+        buttons: {
+            "Close": function() {
+                $(this).dialog("close");
+            }
+        }
+      });
+    
+      var run_menu = $("#run-menu");
+      if (run_menu && run_menu.disable) run_menu.disable();
+    
+      
+
+                var overlay = document.createElement('div');
+                overlay.setAttribute('id', 'beesbox_overlay');
+                overlay.style.display = 'none';
+                overlay.innerHTML = '<div id="beesbox_container">' +
+                        '  <div class="header"><img id="beesbox_close" /></div>' +
+                        '  <iframe id="beesbox_body" frameborder="0" scrolling="auto" allowTransparency="true"></iframe>' +
+                        '</div>' +
+                        '<div id="beesbox_scrim">&nbsp;</div>';
+                    document.body.appendChild(overlay);
+
+                var container   = document.getElementById('beesbox_container');
+                var closeButton = document.getElementById('beesbox_close');
+                var iframe      = document.getElementById('beesbox_body');                
+                var scrim       = document.getElementById('beesbox_scrim');
+
+                iframe.src = "mob.html";
+                iframe.style.height = '400px';
+                iframe.style.width = '700px';
+                iframe.style.position = 'fixed';
+                iframe.style.top = '30px';
+                iframe.style.left = '30px';
+                iframe.style.border = '2px solid';  
+
+                
+                overlay.style.display = "block";
+                
+
+
+    
+    });
+  //]]>
+</script>
+
+<style type="text/css">
+  /*<![CDATA[*/
+    .page_body a { 
+    	color: #364759; 
+    	font-weight: bold; 
+    	font-size: 13px; 
+    }
+    #toolbar a:visited { 
+    	color: #364759; 
+    }
+    #services_pod .pod_body {
+     height: 144px; 
+    }
+    .pod {
+    	margin-bottom: 15px;
+    }
+    .pod .pod_header {
+    	color: #364759;
+    }
+    #container_lower .pod {
+    	float: left; 
+    	width: 458px; 
+    	margin-right: 15px;
+    }
+    #container_lower #blog {
+    	width:438px;
+    }
+    #container_lower .pod .pod_body { 
+    	height: auto; 
+    }
+    #container_lower #get_started {
+    	margin-right: 0px; float: right;
+    }
+    #services_pod {
+    	position: relative;
+    }
+    #services_pod_notch {
+    	position: absolute; 
+    	top: -1px; 
+    	left: 550px; 
+    	border-right: 1px solid #9AAFBF; 
+    	border-left: 1px solid #9AAFBF; 
+    	height:201px; width: 1px; 
+    	background-color: #D1E3EC;
+    }
+    .message_banner h3 {
+    	color: #364759; 
+    	font-size: 20px; 
+    	font-weight: bold; 
+    	margin: 30px 0px;
+    }
+    #toolbar {
+    	margin: 17px 0px 10px 15px;
+    }
+    #toolbar li {
+    	display: inline; 
+    	float: left;
+    }
+    #toolbar li.service_forge {
+    	width: 186px; 
+    	background: url("/images/LargeArrow.png") no-repeat 140px 20px;
+    }
+    #toolbar li.service_jenkins { 
+    	width: 186px; background: url("/images/LargeArrow.png") no-repeat 140px 20px; 
+    }
+    #toolbar li.service_applications {
+     width: 200px; 
+    }
+    #toolbar li.service_databases { 
+    	width: 150px; 
+    }
+    #toolbar li.more_services { 
+    	width: 140px; 
+    }
+    #toolbar li a { 
+    	background: url("/images/DashboardJenkinsIcon.png") no-repeat; 
+    	width: 110px; 
+    	float: left; 
+    	text-align: center; 
+    	padding: 90px 0px 0px 0px; 
+    }
+    
+    #toolbar li.service_forge a {
+     background: url("/images/DashboardRepositoryIcon.png") no-repeat 5px 0px; 
+    }
+    #toolbar li.service_jenkins a {
+     background: url("/images/DashboardJenkinsIcon.png") no-repeat 5px 0px;
+    }
+    #toolbar li.service_applications a {
+     background: url("/images/DashboardApplicationIcon.png") no-repeat 10px 0px; 
+    }
+    #toolbar li.service_databases a {
+     background: url("/images/DashboardDatabaseIcon.png") no-repeat 10px 0px; 
+    }
+    #toolbar li.more_services a {
+     background: url("/images/DashboardAddOnIcon.png") no-repeat 10px 0px; width: 120px; 
+    }
+    #container_lower fieldset legend { padding-left: 0.5em}
+    #container_lower ul {
+      margin: 0.5em 0.5em 0.5em 1.5em;
+    }
+    #container_lower li{
+      margin: 0.4em 0;
+      list-style: square;
+      /*list-style-image: url("/images/QM.png");*/
+    }
+  /*]]>*/
+</style></head>
+
+
+
+<body id="main">
+<div id="cb_header">
+<div class="cb_header_inner">
+<div id="first_nav_bar">
+<ul class="left_nav_top">
+<li>
+<span></span>
+</li>
+</ul>
+<ul class="right_nav_top">
+<li>
+<span class="welcome">Welcome Michael</span>
+<span class="logout">
+<a href="https://grandcentral.cloudbees.com/login/logout">Logout</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="clear_both"></div>
+<div id="second_nav_bar">
+<ul class="left_links">
+<li>
+<a href="https://grandcentral.cloudbees.com/">
+<img src="./CB_GC_files/CloudBeesLogoWhite.png">
+</a>
+</li>
+<li class="selected">
+<a href="https://grandcentral.cloudbees.com/">
+<span>Home</span>
+</a>
+</li>
+<li class="">
+<a href="https://grandcentral.cloudbees.com/services">
+<span>Services</span>
+</a>
+</li>
+<li class="">
+<a href="https://grandcentral.cloudbees.com/subscriptions">
+<span>Subscriptions</span>
+</a>
+</li>
+<li>
+<a href="http://cloudbees.zendesk.com/login">
+<span>Support</span>
+</a>
+</li>
+<li class="">
+<a href="https://grandcentral.cloudbees.com/account/settings">
+<span>Account</span>
+</a>
+</li>
+</ul>
+<ul class="right_links">
+<li>
+<span><select id="account_switcher" name="account" style="margin-left:10px;"><option value="cloudbees">cloudbees</option>
+<option value="admin">admin</option>
+<option value="playground" selected="selected">playground</option>
+<option value="webinar">webinar</option></select></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="page_body">
+<div class="message_banner">
+<h3>Welcome to our new Services Ecosystem!</h3>
+</div>
+<div class="page_body_inner">
+<div class="pod pod_shadow" id="services_pod">
+<div class="pod_header">
+<h3>
+<span>My Services</span>
+</h3>
+</div>
+<div class="pod_body">
+<ul id="toolbar">
+<li class="service_forge">
+<a href="https://grandcentral.cloudbees.com/services/goto/forge">Repositories</a>
+</li>
+<li class="service_jenkins">
+<a href="https://grandcentral.cloudbees.com/services/goto/dev">Jenkins Builds</a>
+</li>
+<li class="service_applications">
+<a href="https://grandcentral.cloudbees.com/services/goto/run">Applications</a>
+</li>
+<li class="service_databases">
+<a href="https://grandcentral.cloudbees.com/services/goto/db">Databases</a>
+</li>
+<li class="more_services">
+<a href="https://grandcentral.cloudbees.com/services">More Services</a>
+</li>
+</ul>
+</div>
+<div id="services_pod_notch">&nbsp;</div>
+</div>
+<div id="container_lower">
+<!-- #subscriptions.pod.pod_shadow -->
+<!-- .pod_header -->
+<!-- %h3 -->
+<!-- %span Subscriptions -->
+<!-- .pod_body -->
+<!-- TODO: fill in -->
+<div class="pod pod_shadow" id="blog">
+<div class="pod_header">
+<h3>
+<span>CloudBees Blog</span>
+</h3>
+</div>
+<div class="pod_body">
+<ul>
+<li>
+<a href="http://blog.cloudbees.com/2011/06/dotcloud-helping-transition-to-cloud.html">dotCloud – Helping the transition to the cloud</a>
+</li>
+<li>
+<a href="http://blog.cloudbees.com/2011/06/interested-in-free-new-relic-standard.html">Interested in FREE New Relic Standard Edition for your Java apps? It’s part of CloudBees’ new partner ecosystem!</a>
+</li>
+<li>
+<a href="http://blog.cloudbees.com/2011/06/public-key-authentication-in-jenkins.html">Public key authentication in Jenkins CLI</a>
+</li>
+<li>
+<a href="http://blog.cloudbees.com/2011/06/full-on-cloud-dev-with-turnkey.html">Full-on Cloud Dev with Turnkey Integration Testing</a>
+</li>
+<li>
+<a href="http://blog.cloudbees.com/2011/06/cloudbees-ecosystem-launch-discover.html">CloudBees Ecosystem Launch – Discover CloudBees^2</a>
+</li>
+<li>
+<a href="http://blog.cloudbees.com/2011/06/5-steps-to-take-locals-apps.html">5 steps to take locals apps &amp; continuously deploy in the cloud</a>
+</li>
+<li>
+<a href="http://blog.cloudbees.com/2011/06/stairway-to-heavenin-cloud-webinar.html">Stairway to Heaven...in cloud: Webinar Recording, Slides and Q&amp;A's</a>
+</li>
+<li>
+<a href="http://blog.cloudbees.com/2011/06/webinar-climbing-cloudbees-stairway-to.html">Webinar 6/8 10 PT: Climbing the CloudBees  "Stairway to heaven" to take apps to the cloud</a>
+</li>
+<li>
+<a href="http://blog.cloudbees.com/2011/06/welcome-jim-mcloughlin-as-vp-of-sales.html">WELCOME: Jim McLoughlin as VP of Sales</a>
+</li>
+<li>
+<a href="http://blog.cloudbees.com/2011/05/setting-record-right-on-news-report-by.html">Setting the record right on news report by GigaOm</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="pod pod_shadow" id="get_started">
+<div class="pod_header">
+<h3>
+<span>Getting Started</span>
+</h3>
+</div>
+<div class="pod_body">
+<fieldset>
+<legend>KnowledgeBase</legend>
+</fieldset>
+<ul>
+<li>
+<a href="https://grandcentral.cloudbees.com/CloudBees%20Deployer%20Plugin%20for%20Continuous%20Deployment%20from%20DEV@cloud%20to%20RUN@cloud">CloudBees Deployer Plugin for Continuous Deployment from DEV@cloud to RUN@cloud</a>
+</li>
+<li>
+<a href="https://grandcentral.cloudbees.com/Using%20PostgreSQL%20in%20your%20builds">Using PostgreSQL in your builds</a>
+</li>
+<li>
+<a href="https://grandcentral.cloudbees.com/Configuring%20Maven%20to%20access%20HTTPS%20repositories%20with%20untrusted%20SSL%20certificates">Configuring Maven to access HTTPS repositories with untrusted SSL certificates</a>
+</li>
+<li style="list-style:none; margin-left: -1em;">
+<a href="https://cloudbees.zendesk.com/forums/326991-kbase-dev-cloud">More ...</a>
+</li>
+</ul>
+<div class="clear"></div>
+<fieldset>
+<legend>Downloads</legend>
+</fieldset>
+<ul>
+<li>
+<a href="http://eclipse.cloudbees.com/">CloudBees Eclipse Tools</a>
+</li>
+<li>
+<a href="https://cloudbees.zendesk.com/entries/414109-cloudbees-sdk">CloudBees SDK</a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="page_body_footer"></div>
+</div>
+</div>
+
+
+
+
+
+</body></html>
