@@ -1,11 +1,9 @@
-                 function hide() {
-                         document.body.removeChild(document.getElementById("beesbox_overlay"));
-                 }
-
+ function hide() {
+         document.body.removeChild(document.getElementById("beesbox_overlay"));
+ }
 
 
  var BeesBox =
- 
  {
 
 
@@ -15,8 +13,9 @@
 
                 overlay.setAttribute('id', 'beesbox_overlay');
                 overlay.style.display = 'none';
-                overlay.innerHTML = '<div id="beesbox_container">' +
-                        '  <div class="header"><a href="javascript: hide();">close</a></div>' +
+                overlay.innerHTML = '<style type="text/css"> .header {background-color: #575656;} .close { color: white; }</style>' +
+                        '<div id="beesbox_container">' +
+                        '  <div class="header"><a href="javascript: hide();" class="close">- Close -</a></div>' +
                         '  <iframe id="beesbox_body" frameborder="0" scrolling="auto" allowTransparency="true"></iframe>' +
                         '</div>' +
                         '<div id="beesbox_scrim">&nbsp;</div>';
@@ -40,7 +39,7 @@
                 iframe.style.height = '500px';
                 iframe.style.width = '700px';
                 iframe.style.position = 'fixed';
-                iframe.style.top = '50px';
+                //iframe.style.top = '50px';
                 iframe.style.left = '30px';
                 iframe.style.border = '2px solid';  
                 
