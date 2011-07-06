@@ -1,12 +1,22 @@
+                 function hide() {
+                         document.body.removeChild(document.getElementById("beesbox_overlay"));
+                 }
+
+
+
  var BeesBox =
  
  {
+
+
  	show: function(url) {
+
                 var overlay = document.createElement('div');
+
                 overlay.setAttribute('id', 'beesbox_overlay');
                 overlay.style.display = 'none';
                 overlay.innerHTML = '<div id="beesbox_container">' +
-                        '  <div class="header"><img id="beesbox_close" /></div>' +
+                        '  <div class="header"><a href="javascript: hide();">close</a></div>' +
                         '  <iframe id="beesbox_body" frameborder="0" scrolling="auto" allowTransparency="true"></iframe>' +
                         '</div>' +
                         '<div id="beesbox_scrim">&nbsp;</div>';
@@ -17,18 +27,37 @@
                 var iframe      = document.getElementById('beesbox_body');                
                 var scrim       = document.getElementById('beesbox_scrim');
 
+                //
+                overlay.style.height = '500px';
+                overlay.style.width = '700px';
+                overlay.style.position = 'fixed';
+                overlay.style.top = '30px';
+                overlay.style.left = '30px';
+                overlay.style.border = '2px solid';  
+
+               
                 iframe.src = "mob.html";
                 iframe.style.height = '500px';
                 iframe.style.width = '700px';
                 iframe.style.position = 'fixed';
-                iframe.style.top = '30px';
+                iframe.style.top = '50px';
                 iframe.style.left = '30px';
                 iframe.style.border = '2px solid';  
                 
-                overlay.style.display = "block"; 	
+                
+                 overlay.style.display = "block"; 	
+
+
 
             }
 
 
 
- } 
+ }
+
+
+ 
+ 
+
+
+
