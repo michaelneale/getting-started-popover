@@ -1,4 +1,7 @@
- var BeesBox = function(url) {
+ var BeesBox =
+ 
+ {
+ 	show: function(url) {
                 var overlay = document.createElement('div');
                 overlay.setAttribute('id', 'beesbox_overlay');
                 overlay.style.display = 'none';
@@ -15,7 +18,7 @@
                 var scrim       = document.getElementById('beesbox_scrim');
 
                 iframe.src = "mob.html";
-                iframe.style.height = '400px';
+                iframe.style.height = '500px';
                 iframe.style.width = '700px';
                 iframe.style.position = 'fixed';
                 iframe.style.top = '30px';
@@ -24,4 +27,8 @@
 
                 
                 overlay.style.display = "block"; 	
+            }
+
+
+
  } 
