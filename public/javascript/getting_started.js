@@ -24,9 +24,9 @@
                 iframe.style.top = '30px';
                 iframe.style.left = '30px';
                 iframe.style.border = '2px solid';  
-
                 
                 overlay.style.display = "block"; 	
+
             }
 
 
