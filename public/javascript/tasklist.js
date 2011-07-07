@@ -4,7 +4,7 @@ $(document).ready(function() {
   		dataType: 'jsonp',  		
   		jsonpCallback: 'taskdata',
   		jsonp: false,
-  		url: 'http://localhost:9000/application/data',
+  		url: window.location.href.split('_data_=')[1],
   		success: function (data) {
     				var tasks = $('#task-list'); 
 					var completed = data["completed"];
@@ -20,6 +20,8 @@ $(document).ready(function() {
 					
 					$('#welcome').html('What should I do now?');					
 					tasks.page();
+
+//					alert(window.location.href);
 
   		}
 		});

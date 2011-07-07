@@ -26,7 +26,7 @@ var BeesBox = function() {
                         overlay.style.left = '30px';
                         overlay.style.border = '2px solid';  
                        
-                        iframe.src = "mob.html";
+                        iframe.src = "mob.html?_data_=http://localhost:9000/application/data";
                         iframe.style.height = '500px';
                         iframe.style.width = '700px';
                         iframe.style.position = 'fixed';
