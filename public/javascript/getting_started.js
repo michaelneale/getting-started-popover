@@ -1,6 +1,8 @@
 var BeesBox = function() {    
     var PublicInterface = {
-                show: function(url) {
+
+                //data_url is url to the JSONP which provides the data, boxpage (optiona) is the html for the box
+                show: function(data_url, boxpage) {
 
                         var overlay = document.createElement('div');
 
@@ -26,7 +28,10 @@ var BeesBox = function() {
                         overlay.style.left = '30px';
                         overlay.style.border = '2px solid';  
                        
-                        iframe.src = "mob.html?_data_=http://localhost:9000/application/data";
+                        url = boxpage || "beesbox.html";
+
+                        //iframe.src = "mob.html?_data_=http://localhost:9000/application/data";
+                        iframe.src = url + "?_data_=" + data_url;
                         iframe.style.height = '500px';
                         iframe.style.width = '700px';
                         iframe.style.position = 'fixed';
