@@ -18,10 +18,8 @@ $(document).ready(function() {
 						}	
 					});
 					
-					$('#loading').html($('#welcome').html());					
+					$('#welcome').html('What should I do now?');					
 					tasks.page();
-
-
 
   		}
 		});
