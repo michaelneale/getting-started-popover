@@ -1,10 +1,8 @@
- function hide() {
-         document.body.removeChild(document.getElementById("beesbox_overlay"));
- }
 
 
- var BeesBox =
- {
+
+var BeesBox = 
+{
 
 
  	show: function(url) {
@@ -15,7 +13,7 @@
                 overlay.style.display = 'none';
                 overlay.innerHTML = '<style type="text/css"> .header {background-color: #575656;} .close { color: white; }</style>' +
                         '<div id="beesbox_container">' +
-                        '  <div class="header"><a href="javascript: hide();" class="close">- Close -</a></div>' +
+                        '  <div class="header"><a href="javascript: BeesBoxUtil.hide();" class="close">- Close -</a></div>' +
                         '  <iframe id="beesbox_body" frameborder="0" scrolling="auto" allowTransparency="true"></iframe>' +
                         '</div>' +
                         '<div id="beesbox_scrim">&nbsp;</div>';
@@ -54,6 +52,12 @@
 
  }
 
+
+var BeesBoxUtil = {
+                 hide: function() {
+                         document.body.removeChild(document.getElementById("beesbox_overlay"));
+                 }        
+} 
 
  
  
