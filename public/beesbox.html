@@ -7,7 +7,44 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
 		<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
-		<script src="javascript/tasklist.js"></script>
+
+		<script>
+			$(document).ready(function() {
+
+				$.ajax({
+			  		dataType: 'jsonp',  		
+			  		jsonpCallback: 'taskdata',
+			  		jsonp: false,
+			  		url: window.location.href.split('_data_=')[1],
+			  		success: function (data) {
+			    				var tasks = $('#task-list'); 
+								var completed = data["completed"] || [];
+								var disabled = data["disabled"] || {};
+								$.each(data['tasks'], function(title, desc) {
+									if (completed.indexOf(title) === -1) {
+										if (disabled[title]) {
+											tasks.append('<div data-role="collapsible" data-collapsed="true"><h3>' 
+											                + title + '</h3> <em>' + disabled[title] +'</em><p>' + desc + '</p></div>');																					
+
+										} else {
+											tasks.append('<div data-role="collapsible" data-collapsed="true" data-theme="b"><h3>' 
+															+ title + '</h3><p>' + desc + '</p></div>');													
+
+										}
+									} else {
+										tasks.append('<div data-role="collapsible" data-collapsed="true"><h3>' 
+															+ title + '</h3> <em>(You are already doing this !)</em><p>' + desc + '</p></div>');																			
+									}	
+								});
+								
+								$('#welcome').html('What should I do now?');					
+								tasks.page();
+
+			  		}
+					});
+			});
+		</script>
+		<!--<script src="javascript/tasklist.js"></script>-->
     </head>
     <body>    	
 		<div data-role="page" id="jqm-home" class="type-home" data-theme="a"> 

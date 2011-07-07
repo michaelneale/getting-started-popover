@@ -28,7 +28,7 @@ var BeesBox = function() {
                         overlay.style.left = '30px';
                         overlay.style.border = '2px solid';  
                        
-                        url = boxpage || "beesbox.html";
+                        url = boxpage || "http://web-static-cloudfront.s3.amazonaws.com/components/gettingstarted/beesbox.html";
 
                         //iframe.src = "mob.html?_data_=http://localhost:9000/application/data";
                         iframe.src = url + "?_data_=" + data_url;
