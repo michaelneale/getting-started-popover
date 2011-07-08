@@ -4,34 +4,14 @@
     <head>
         <title>What do to next</title>
         <meta charset="utf-8">        
+        <script type="text/javascript" src = "http://web-static-cloudfront.s3.amazonaws.com/components/gettingstarted/getting_started_1.js"></script>
+
     </head>
     <body>
-
-        <script>
-
-                var overlay = document.createElement('div');
-                overlay.setAttribute('id', 'beesbox_overlay');
-                overlay.style.display = 'none';
-                overlay.innerHTML = '<div id="beesbox_container">' +
-                        '  <div class="header"><img id="beesbox_close" /></div>' +
-                        '  <iframe id="beesbox_body" frameborder="0" scrolling="auto" allowTransparency="true"></iframe>' +
-                        '</div>' +
-                        '<div id="beesbox_scrim">&nbsp;</div>';
-                    document.body.appendChild(overlay);
-
-                var container   = document.getElementById('beesbox_container');
-                var closeButton = document.getElementById('beesbox_close');
-                var iframe      = document.getElementById('beesbox_body');                
-                var scrim       = document.getElementById('beesbox_scrim');
-
-                iframe.src = "mob.html";
-                iframe.style.height = '400px';
-                iframe.style.width = '700px';
-                iframe.addEventListener('click', function() { alert(42);}, false)
-                
-                overlay.style.display = "block";
-                
-        </script>
+                Here we go !
+                <script>
+                       BeesBox.show("http://web-static-cloudfront.s3.amazonaws.com/components/gettingstarted/sample_jsonp.json"); 
+                </script>
     </body>
 
 

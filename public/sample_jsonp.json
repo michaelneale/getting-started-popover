@@ -1,0 +1,16 @@
+taskdata({
+    "tasks": {
+        "Something": "Yeah this works",
+        "Set up a build": "You can enable the Jenkins build service on your account <a href='http://grandcentral.cloudbees.com' target='_parent'>here</a>",
+        "Deploy an application": "Subscribe to the RUN@cloud application service here and imediately deploy apps",
+        "Create a automated selenium test suite": "Subscribe to the sauce labs service here.",
+        "Use a CouchDB database": "Add the Cloudant CouchDB subscription to your account here (it is free !).",
+        "Analyse your code in your repositories": "With the sonar service - this requites the Build service to be subscribed."
+    },
+    "completed": [
+        "Something"
+    ],
+    "disabled": {
+        "Use a CouchDB database": "Please upgrade to get this feature."
+    }
+})
