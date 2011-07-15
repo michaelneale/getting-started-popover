@@ -2,6 +2,3 @@ This is intended for private use on a CDN - (c) CloudBees 2011
 
 but being non obfuscated js in the wild, here it is anyway...
 
-
-
-http://web-static-cloudfront.s3.amazonaws.com/components/gettingstarted/example1.html
