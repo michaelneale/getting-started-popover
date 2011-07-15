@@ -4,6 +4,7 @@ var BeesBox = function() {
                 //data_url is url to the JSONP which provides the data, boxpage (optiona) is the html for the box
                 show: function(data_url, boxpage) {
 
+                        var BEESBOX_HTML = "http://web-static-cloudfront.s3.amazonaws.com/components/gettingstarted/beesbox.html";
                         var overlay = document.createElement('div');
 
                         overlay.setAttribute('id', 'beesbox_overlay');
@@ -28,14 +29,14 @@ var BeesBox = function() {
                         overlay.style.left = '30px';
                         overlay.style.border = '2px solid';  
                        
-                        url = boxpage || "http://web-static-cloudfront.s3.amazonaws.com/components/gettingstarted/beesbox.html";
+                        url = boxpage || BEESBOX_HTML;
 
                         //iframe.src = "mob.html?_data_=http://localhost:9000/application/data";
                         iframe.src = url + "?_data_=" + data_url;
                         iframe.style.height = '500px';
                         iframe.style.width = '700px';
                         iframe.style.position = 'fixed';
-                        //iframe.style.top = '50px';
+                        iframe.style.top = '50px';
                         iframe.style.left = '30px';
                         iframe.style.border = '2px solid';  
                         
