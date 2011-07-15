@@ -1,16 +1,18 @@
 taskdata({
     "tasks": {
-        "Something": "Yeah this works",
-        "Set up a build": "You can enable the Jenkins build service on your account <a href='http://grandcentral.cloudbees.com' target='_parent'>here</a>",
-        "Deploy an application": "Subscribe to the RUN@cloud application service here and imediately deploy apps",
-        "Create a automated selenium test suite": "Subscribe to the sauce labs service here.",
-        "Use a CouchDB database": "Add the Cloudant CouchDB subscription to your account here (it is free !).",
-        "Analyse your code in your repositories": "With the sonar service - this requites the Build service to be subscribed."
+
+        "Set up an automated build or a repository": "You can enable the Jenkins build service on your account <a href='https://grandcentral.cloudbees.com/services/plans/dev' target='_parent'>here</a> (if you haven't already !) and then configure jobs in your Jenkins service to build, test and even deploy your code. <p/>CloudBees can also host your Git or Subversion repository for your project.",
+        "Deploy a new application": "If you haven't done so, please subscribe to RUN@cloud <a href='https://grandcentral.cloudbees.com/services/plans/run' target='_parent'>here</a>, and then you can create a new sample app, or upload your own application.<p/>You can see your applications, upload new ones <a href='https://grandcentral.cloudbees.com/services/goto/application' target='_parent'>here</a>",
+        "Test your application's web interface": "With Selenium and Saucelabs, you can define and run tests in the cloud which test your applications web interface in a variety of browsers. Sign up <a href='https://grandcentral.cloudbees.com/services/plans/sauce_labs' target='_parent'>here.</a>",
+        "Create a CouchDB database": "Add the Cloudant CouchDB subscription to your account <a href='https://grandcentral.cloudbees.com/services/plans/cloudant' target='_parent'>here</a> (there are free plans !).",
+        "Analyse your code": "Sonar lets you analyse and report on common code quality problems. Sign up <a href='https://grandcentral.cloudbees.com/services/plans/sonar' target='_parent'>here</a>",        
+        "Create a MySQL Database" : "Hosted MySQL means no backup hassle, master/slave replication all taken care of - sign up <a href='https://grandcentral.cloudbees.com/services/plans/db' target='_parent'>here</a>.",        
+        "Install the CloudBees SDK or The Eclipse plugin": "The CloudBees SDK provides command line tools for automating interactions with CloudBees (and much faster app deploys !) - For Eclipse users there is an eclipse plugin available which covers all of CloudBees. Consult <a href='https://grandcentral.cloudbees.com' target='_parent'>grandcentral</a> for info on this."
     },
     "completed": [
         "Something"
     ],
     "disabled": {
-        "Use a CouchDB database": "Please upgrade to get this feature."
+        "blah blah": "Please upgrade to get this feature."
     }
 })
