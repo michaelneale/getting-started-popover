@@ -2,7 +2,9 @@ var BeesBox = function() {
     var PublicInterface = {
 
                 //data_url is url to the JSONP which provides the data, boxpage (optiona) is the html for the box
-                show: function(data_url, boxpage) {
+                show: function(data_url, boxpage, options) {
+
+                        options = options || {};
 
                         var BEESBOX_HTML = "http://web-static-cloudfront.s3.amazonaws.com/components/gettingstarted/beesbox.html";
                         var overlay = document.createElement('div');
@@ -22,22 +24,27 @@ var BeesBox = function() {
                         var iframe      = document.getElementById('beesbox_body');                
                         var scrim       = document.getElementById('beesbox_scrim');
 
-                        overlay.style.height = '500px';
+                        var top = options.top || 30;
+                        var left = options.left || 30;
+                        var height = options.height || 500;
+                                
+
+                        overlay.style.height = height + "px";
                         overlay.style.width = '700px';
                         overlay.style.position = 'fixed';
-                        overlay.style.top = '30px';
-                        overlay.style.left = '30px';
+                        overlay.style.top = top + "px";
+                        overlay.style.left = left + "px";
                         overlay.style.border = '2px solid';  
                        
                         url = boxpage || BEESBOX_HTML;
 
                         //iframe.src = "mob.html?_data_=http://localhost:9000/application/data";
                         iframe.src = url + "?_data_=" + data_url;
-                        iframe.style.height = '500px';
+                        iframe.style.height = height + 'px';
                         iframe.style.width = '700px';
                         iframe.style.position = 'fixed';
-                        iframe.style.top = '50px';
-                        iframe.style.left = '30px';
+                        iframe.style.top = (top + 20) + 'px';
+                        iframe.style.left = left + 'px';
                         iframe.style.border = '2px solid';  
                         
                         overlay.style.display = "block";       
